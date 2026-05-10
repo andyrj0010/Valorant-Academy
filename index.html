@@ -1,1 +1,969 @@
+    <!DOCTYPE html>
+    <html lang="es">
 
+    <head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>
+        Valorant Academy - Coaching Valorant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    />
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    </head>
+
+    <body>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header>
+
+    <div class="logo">
+
+  <img
+    src="img/logo.png"
+    alt="Valorant Academy"
+  >
+
+  <span>
+    VALORANT ACADEMY
+  </span>
+
+</div>
+
+</div>
+
+    <nav>
+
+        <a href="#benefits">
+        Beneficios
+        </a>
+
+        <a href="#plans">
+        Planes
+        </a>
+
+        <a href="#reviews">
+        Reviews
+        </a>
+
+        <a href="#">
+        Coaching
+        </a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <!-- NO LOGUEADO -->
+
+        <div id="guestView">
+
+        <a
+            href="https://discord.gg/RqnsYmznCS"
+            target="_blank"
+            class="discord-btn"
+        >
+            Discord
+        </a>
+
+        <button
+            class="login-btn"
+            id="openAuth"
+        >
+            Iniciar Sesión
+        </button>
+
+        </div>
+
+        <!-- LOGUEADO -->
+
+        <div
+        class="user-profile hidden"
+        id="userProfile"
+        >
+
+        <div
+            class="profile-avatar"
+            id="headerAvatar"
+        >
+            V
+        </div>
+
+        <span>
+            Mi Cuenta
+        </span>
+
+        <button id="logoutBtn">
+            Salir
+        </button>
+
+        </div>
+
+    </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- MODAL LOGIN -->
+    <!-- ========================= -->
+
+    <div
+    class="auth-modal hidden"
+    id="authModal"
+    >
+
+    <div class="auth-modal-content">
+
+        <span
+        class="close-auth-modal"
+        id="closeAuth"
+        >
+        ×
+        </span>
+
+        <h2>
+        Accede a Valorant Academy
+        </h2>
+
+        <p>
+        Guarda tu progreso y sesiones.
+        </p>
+
+        <form
+        class="auth-form"
+        id="authForm"
+        >
+
+        <div class="input-group">
+
+            <label>
+            Correo electrónico
+            </label>
+
+            <input
+            type="email"
+            id="authEmail"
+            placeholder="correo@gmail.com"
+            required
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+            Contraseña
+            </label>
+
+            <input
+            type="password"
+            id="authPassword"
+            placeholder="********"
+            required
+            >
+
+        </div>
+
+        <div class="auth-buttons">
+
+            <button
+            type="button"
+            class="primary-btn"
+            id="createAccount"
+            >
+            Crear Cuenta
+            </button>
+
+            <button
+            type="button"
+            class="secondary-btn"
+            id="loginAccount"
+            >
+            Iniciar Sesión
+            </button>
+
+        </div>
+
+        </form>
+
+        <p
+        class="auth-message"
+        id="authMessage"
+        ></p>
+
+    </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- MODAL MI CUENTA -->
+    <!-- ========================= -->
+
+    <div
+    class="account-modal hidden"
+    id="accountModal"
+    >
+
+    <div class="account-modal-content">
+
+        <span
+        class="close-account-modal"
+        id="closeAccountModal"
+        >
+        ×
+        </span>
+
+        <h2>
+        Mi Cuenta
+        </h2>
+
+        <!-- FOTO -->
+
+        <label
+        for="profileUpload"
+        class="upload-box"
+        >
+
+        <img
+            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            id="profileImage"
+        >
+
+        <div class="upload-overlay">
+
+            <span>
+            Insertar imagen
+            </span>
+
+            <p>
+            Buscar desde archivos
+            </p>
+
+        </div>
+
+        </label>
+
+        <input
+        type="file"
+        id="profileUpload"
+        accept="image/*"
+        hidden
+        >
+
+        <!-- NOMBRE -->
+
+        <div class="input-group">
+
+        <label>
+            Cambiar nombre
+        </label>
+
+        <input
+            type="text"
+            id="accountName"
+            placeholder="Nuevo nombre"
+        >
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+        <label>
+            Cambiar correo
+        </label>
+
+        <input
+            type="email"
+            id="accountEmailEdit"
+            placeholder="nuevo@gmail.com"
+        >
+
+        </div>
+
+        <!-- PASSWORD -->
+
+        <div class="input-group">
+
+        <label>
+            Cambiar contraseña
+        </label>
+
+        <input
+            type="password"
+            id="accountPasswordEdit"
+            placeholder="Nueva contraseña"
+        >
+
+        </div>
+
+        <button
+        class="primary-btn"
+        id="saveAccount"
+        >
+        Guardar Cambios
+        </button>
+
+        <p
+        class="auth-message"
+        id="saveMessage"
+        ></p>
+
+    </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+        COACHING PROFESIONAL DE VALORANT
+        </span>
+
+        <h1>
+
+        Sube de rango.
+
+        <span>
+            Juega como un radiante
+        </span>
+
+        </h1>
+
+        <p>
+
+        Coaching personalizado para mejorar aim,
+        gamesense, posicionamiento y mentalidad competitiva.
+
+        </p>
+
+        <div class="hero-buttons">
+
+        <button
+            class="primary-btn"
+            id="openBooking"
+        >
+            Reservar Coaching
+        </button>
+
+        <button
+            class="secondary-btn openPlanModal"
+        >
+            Ver Planes
+        </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="rank-box">
+
+        <h3>
+            +15
+        </h3>
+
+        <p>
+            Jugadores entrenados
+        </p>
+
+        </div>
+
+        <div class="rank-box">
+
+        <h3>
+            Hierro → Diamante, Asc, Inmortal, Randiant
+        </h3> 
+
+        <p>
+            Resultados reales
+        </p>
+
+        </div>
+
+        <div class="rank-box">
+
+        <h3>
+            1a1, 2a2, 3a3, 4a4
+        </h3>
+
+        <p>
+            Coaching personalizado
+        </p>
+
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- BENEFICIOS -->
+    <!-- ========================= -->
+
+    <section
+    class="benefits"
+    id="benefits"
+    >
+
+    <h2>
+        ¿Qué vas a mejorar?
+    </h2>
+
+    <div class="benefit-grid">
+
+        <div class="benefit-card">
+
+        <h3>
+            Aim
+        </h3>
+
+        <p>
+            Rutinas avanzadas para mejorar precisión y reflejos.
+        </p>
+
+        </div>
+
+        <div class="benefit-card">
+
+        <h3>
+            Gamesense
+        </h3>
+
+        <p>
+            Aprende a leer rondas y tomar mejores decisiones.
+        </p>
+
+        </div>
+
+        <div class="benefit-card">
+
+        <h3>
+            Positioning
+        </h3>
+
+        <p>
+            Domina ángulos, timings y control del mapa.
+        </p>
+
+        </div>
+
+        <div class="benefit-card">
+
+        <h3>
+            Mentalidad
+        </h3>
+
+        <p>
+            Evita tilt y mejora tu consistencia competitiva.
+        </p>
+
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- REVIEWS -->
+    <!-- ========================= -->
+
+    <section
+    class="reviews"
+    id="reviews"
+    >
+
+    <h2>
+        Resultados Reales
+    </h2>
+
+    <div class="reviews-grid">
+
+        <div class="review-video-card">
+
+        <div class="review-label before">
+            ANTES DEL COACHING
+        </div>
+
+        <video
+            controls
+            class="review-video"
+        >
+
+            <source
+            src="videos/antes1.mp4"
+            type="video/mp4"
+            >
+
+        </video>
+
+        <div class="review-info">
+
+            <h3>
+            Jugador Gold
+            </h3>
+
+            <p>
+            Problemas de aim, positioning y malas decisiones.
+            </p>
+
+        </div>
+
+        </div>
+
+        <div class="review-video-card">
+
+        <div class="review-label after">
+            DESPUÉS DEL COACHING
+        </div>
+
+        <video
+            controls
+            class="review-video"
+        >
+
+            <source
+            src="videos/despues1.mp4"
+            type="video/mp4"
+            >
+
+        </video>
+
+        <div class="review-info">
+
+            <h3>
+            Ascendant → Immortal
+            </h3>
+
+            <p>
+            Mejor gamesense, aim más limpio y mejor mental.
+            </p>
+
+        </div>
+
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- PLANES -->
+    <!-- ========================= -->
+
+    <section
+    class="plans"
+    id="plans"
+    >
+
+    <h2>
+        Planes de Coaching
+    </h2>
+
+    <div class="plans-grid">
+
+        <!-- BASICO -->
+
+        <div class="plan-card">
+
+        <h3>
+            Básico
+        </h3>
+
+        <h1>
+            14.99€
+        </h1>
+
+        <ul>
+
+            <li>✔ 1 sesión personalizada</li>
+
+            <li>✔ Análisis básico de gameplay</li>
+
+            <li>✔ Corrección de errores comunes</li>
+
+            <li>✔ Mejora de aim y positioning</li>
+
+            <li>✖ Seguimiento semanal</li>
+
+            <li>✖ Rutina personalizada</li>
+            
+            <li>Recuerda hacer captura cuando realizes el pago y mandala por ticket y espera a que se confirme el pago</li>
+
+        </ul>
+
+        <button class="openPlanModal">
+            Elegir Plan
+        </button>
+
+        </div>
+
+        <!-- AVANZADO -->
+
+        <div class="plan-card featured">
+
+        <span class="popular">
+            MÁS POPULAR
+        </span>
+
+        <h3>
+            Avanzado
+        </h3>
+
+        <h1>
+            29.99€
+        </h1>
+
+        <ul>
+
+            <li>✔ 3 sesiones personalizadas</li>
+
+            <li>✔ VOD Review completa</li>
+
+            <li>✔ Mejora de gamesense</li>
+
+            <li>✔ Rutina de aim training</li>
+
+            <li>✔ Seguimiento semanal</li>
+
+            <li>✔ Consejos de mentalidad competitiva</li>
+
+            <li>Recuerda hacer captura cuando realizes el pago y mandala por ticket y espera a que se confirme el pago</li>
+
+        </ul>
+
+        <button class="openPlanModal">
+            Elegir Plan
+        </button>
+
+        </div>
+
+        <!-- PREMIUM -->
+
+        <div class="plan-card">
+
+        <h3>
+            Premium
+        </h3>
+
+        <h1>
+            59.99€
+        </h1>
+
+        <ul>
+
+            <li>✔ Coaching ilimitado semanal</li>
+
+            <li>✔ Análisis profesional avanzado</li>
+
+            <li>✔ Estrategias personalizadas</li>
+
+            <li>✔ Rutina premium aim + gamesense</li>
+
+            <li>✔ Seguimiento diario</li>
+
+            <li>✔ Prioridad absoluta en Discord</li>
+
+            <li>Recuerda hacer captura cuando realizes el pago y mandala por ticket y espera a que se confirme el pago</li>
+
+        </ul>
+
+        <button class="openPlanModal">
+            Elegir Plan
+        </button>
+
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- MODAL COACHING -->
+    <!-- ========================= -->
+
+    <div
+    class="booking-modal hidden"
+    id="bookingModal"
+    >
+
+    <div class="modal-content">
+
+        <span
+        class="close-modal"
+        id="closeModal"
+        >
+        ×
+        </span>
+
+        <h2>
+        Reservar Coaching
+        </h2>
+
+        <form class="booking-form">
+
+        <div class="input-group">
+
+            <label>
+            Nombre
+            </label>
+
+            <input
+            type="text"
+            placeholder="Tu nombre"
+            required
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+            Apellidos
+            </label>
+
+            <input
+            type="text"
+            placeholder="Tus apellidos"
+            required
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+            Discord
+            </label>
+
+            <input
+            type="text"
+            placeholder="usuario#0000"
+            required
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+            Rango actual
+            </label>
+
+            <select required>
+
+            <option value="">
+                Selecciona tu rango
+            </option>
+
+            <option>Iron</option>
+            <option>Bronze</option>
+            <option>Silver</option>
+            <option>Gold</option>
+            <option>Platinum</option>
+            <option>Diamond</option>
+            <option>Ascendant</option>
+            <option>Immortal</option>
+            <option>Radiant</option>
+
+            </select>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+            Rango al que quieres llegar
+            </label>
+
+            <select required>
+
+            <option value="">
+                Selecciona tu objetivo
+            </option>
+
+            <option>Silver</option>
+            <option>Gold</option>
+            <option>Platinum</option>
+            <option>Diamond</option>
+            <option>Ascendant</option>
+            <option>Immortal</option>
+            <option>Radiant</option>
+
+            </select>
+
+        </div>
+
+        <button
+            type="submit"
+            class="primary-btn"
+        >
+            Reservar Ahora
+        </button>
+
+        </form>
+
+    </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- MODAL PLANES -->
+    <!-- ========================= -->
+
+    <div
+    class="plan-modal hidden"
+    id="planModal"
+    >
+
+    <div class="plan-modal-content">
+
+        <span
+        class="close-plan-modal"
+        id="closePlanModal"
+        >
+        ×
+        </span>
+
+        <h2>
+        Normas y Condiciones
+        </h2>
+
+        <div class="plan-info">
+
+        <p>
+            ✔ El coaching es completamente personalizado.
+        </p>
+
+        <p>
+            ✔ Respeto obligatorio durante las sesiones.
+        </p>
+
+        <p>
+            ✔ No se permiten reembolsos una vez iniciada la sesión.
+        </p>
+
+        <p>
+            ✔ Las cancelaciones deben avisarse con antelación.
+        </p>
+
+        <p>
+            ✔ Recibirás soporte y seguimiento según el plan elegido.
+        </p>
+             Recuerda hacer captura cuando realizes el pago y mandala por ticket y espera a que se confirme el pago.
+          <p>
+            
+        </p>
+
+        </div>
+
+        <div class="payment-methods">
+
+        <h3>
+            Métodos de Pago
+        </h3>
+
+        <!-- PAYPAL -->
+
+        <a
+            href="https://paypal.me/ElGitano03"
+            target="_blank"
+            class="payment-btn paypal-btn"
+        >
+
+            <span class="payment-icon">
+            💳
+            </span>
+
+            Pagar con PayPal
+
+        </a>
+
+        <!-- BIZUM -->
+
+        <div class="bizum-box">
+
+            <div class="bizum-top">
+
+            <span class="bizum-icon">
+                📱
+            </span>
+
+            <div>
+
+                <h4>
+                Pago por Bizum
+                </h4>
+
+                <p>
+                +34 692 668 784
+                </p>
+
+            </div>
+
+            </div>
+
+            <button
+            class="copy-btn"
+            onclick="copyBizum()"
+            >
+            Copiar número
+            </button>
+
+        </div>
+
+        </div>
+
+        <button
+        class="primary-btn"
+        id="closePlanButton"
+        >
+        Entendido
+        </button>
+
+    </div>
+
+    </div>
+
+    <script
+    type="module"
+    src="script.js"
+    ></script>
+
+    </body>
+    </html>
